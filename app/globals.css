@@ -28,12 +28,10 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
-    @apply bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 text-foreground;
+    @apply bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100;
     font-feature-settings: "rlig" 1, "calt" 1;
+    color: hsl(var(--foreground));
   }
 }
 
