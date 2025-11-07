@@ -12,10 +12,10 @@ export function Header() {
             </div>
             <div>
               <h1 className="text-3xl font-bold tracking-tight">
-                Independent Fundamental Baptist Church
+                Berean Baptist Church
               </h1>
               <p className="text-primary-100 text-sm mt-1">
-                "Upon this rock I will build my church" - Matthew 16:18
+                "These were more noble... they received the word with all readiness" - Acts 17:11
               </p>
             </div>
           </div>
@@ -31,13 +31,6 @@ export function Header() {
           >
             <Calendar className="h-4 w-4" />
             Calendar
-          </a>
-          <a
-            href="#prayer"
-            className="flex items-center gap-2 hover:text-primary-200 transition-colors"
-          >
-            <Heart className="h-4 w-4" />
-            Prayer Requests
           </a>
           <a
             href="#scripture"

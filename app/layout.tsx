@@ -5,9 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Church Calendar - Independent Fundamental Baptist Church",
-  description: "Stay connected with our church events, services, and activities. Built for faith, community, and fellowship.",
-  keywords: ["church", "calendar", "baptist", "events", "services", "bible study"],
+  title: "Church Calendar - Berean Baptist Church",
+  description: "Stay connected with Berean Baptist Church events, services, and activities. Searching the Scriptures daily.",
+  keywords: ["church", "calendar", "baptist", "berean", "events", "services", "bible study"],
 };
 
 export default function RootLayout({

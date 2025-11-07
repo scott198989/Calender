@@ -4,10 +4,9 @@ import { useState } from "react"
 import { Header } from "@/components/Header"
 import { Calendar } from "@/components/Calendar"
 import { EventList } from "@/components/EventList"
-import { PrayerRequests } from "@/components/PrayerRequests"
 import { Announcements } from "@/components/Announcements"
 import { DailyScripture } from "@/components/DailyScripture"
-import { sampleEvents, samplePrayerRequests, sampleAnnouncements } from "@/lib/data"
+import { sampleEvents, sampleAnnouncements } from "@/lib/data"
 
 export default function Home() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
@@ -34,9 +33,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Prayer & Announcements Section */}
-        <section id="prayer" className="grid md:grid-cols-2 gap-8">
-          <PrayerRequests requests={samplePrayerRequests} />
+        {/* Announcements Section */}
+        <section className="max-w-3xl mx-auto">
           <Announcements announcements={sampleAnnouncements} />
         </section>
       </main>
@@ -44,10 +42,10 @@ export default function Home() {
       <footer className="bg-primary-900 text-white mt-16 py-8">
         <div className="container mx-auto px-4 text-center">
           <p className="text-primary-200">
-            © {new Date().getFullYear()} Independent Fundamental Baptist Church
+            © {new Date().getFullYear()} Berean Baptist Church
           </p>
           <p className="text-sm text-primary-300 mt-2">
-            Serving the Lord with gladness
+            Searching the Scriptures daily
           </p>
         </div>
       </footer>
