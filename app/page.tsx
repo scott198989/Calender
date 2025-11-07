@@ -8,7 +8,7 @@ import { Calendar } from "@/components/Calendar"
 import { EventList } from "@/components/EventList"
 import { Announcements } from "@/components/Announcements"
 import { sampleEvents, sampleAnnouncements } from "@/lib/data"
-import { Search, Filter, Download, Grid3x3, List, Timeline } from "lucide-react"
+import { Search, Filter, Download, Grid3x3, List, Clock } from "lucide-react"
 import * as Tabs from "@radix-ui/react-tabs"
 
 type ViewMode = "month" | "list" | "timeline"
@@ -118,7 +118,7 @@ export default function PremiumHome() {
                     value="timeline"
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg data-[state=active]:bg-white dark:data-[state=active]:bg-slate-700 data-[state=active]:shadow-md transition-all"
                   >
-                    <Timeline className="h-4 w-4" />
+                    <Clock className="h-4 w-4" />
                     <span>Timeline</span>
                   </Tabs.Trigger>
                 </Tabs.List>
