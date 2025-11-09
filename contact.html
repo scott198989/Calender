@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Berean Baptist Church of White House">
+    <title>Contact Us - Berean Baptist Church of White House</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Berean Baptist Church</div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="donate.html">Give</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="section-title">Contact Us</h1>
+        <div class="divider"></div>
+
+        <p class="text-center mb-3" style="color: var(--text-light); max-width: 700px; margin-left: auto; margin-right: auto;">
+            We'd love to hear from you! Whether you have a question, prayer request, or just want to say hello,
+            please don't hesitate to reach out.
+        </p>
+
+        <div class="card-grid">
+            <!-- Contact Information Cards -->
+            <div class="card text-center">
+                <span class="card-icon">📍</span>
+                <h3>Visit Us</h3>
+                <p>268 Marlin Road<br>White House, TN 37188</p>
+                <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">
+                    Office Hours:<br>Monday - Friday<br>9:00 AM - 5:00 PM
+                </p>
+            </div>
+
+            <div class="card text-center">
+                <span class="card-icon">📞</span>
+                <h3>Call Us</h3>
+                <p><strong>Office:</strong> (615) 681-0207</p>
+                <p><strong>Prayer Line:</strong> (555) 123-4568</p>
+                <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">
+                    Available 24/7 for prayer requests
+                </p>
+            </div>
+
+            <div class="card text-center">
+                <span class="card-icon">📧</span>
+                <h3>Email Us</h3>
+                <p><strong>General:</strong><br>info@bbcofwhitehouse.com</p>
+                <p><strong>Prayer:</strong><br>prayer@gracecommunity.org</p>
+                <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;">
+                    We typically respond within 24 hours
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="mt-3" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+            <div class="card">
+                <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">Send Us a Message</h2>
+
+                <div class="alert alert-success" id="contactSuccess">
+                    <strong>Thank you!</strong> Your message has been sent successfully. We'll be in touch soon.
+                </div>
+
+                <div class="alert alert-error" id="contactError">
+                    <strong>Error:</strong> There was a problem sending your message. Please try again or contact us directly.
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject...</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="prayer">Prayer Request</option>
+                            <option value="visit">Planning to Visit</option>
+                            <option value="missions">Missions Information</option>
+                            <option value="volunteer">Volunteer Opportunities</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" id="submitContactBtn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Service Times -->
+        <div class="mt-3">
+            <h2 class="section-title">Service Times</h2>
+            <div class="divider"></div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Sunday Worship</h3>
+                    <p style="font-size: 1.5rem; color: var(--primary-color); font-weight: bold; margin: 1rem 0;">
+                        9:00 AM & 11:00 AM
+                    </p>
+                    <p>Join us for worship, biblical teaching, and fellowship. Children's ministry available for all ages.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Wednesday Bible Study</h3>
+                    <p style="font-size: 1.5rem; color: var(--primary-color); font-weight: bold; margin: 1rem 0;">
+                        7:00 PM
+                    </p>
+                    <p>Dive deeper into God's Word with interactive study and small group discussions.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Friday Youth Group</h3>
+                    <p style="font-size: 1.5rem; color: var(--primary-color); font-weight: bold; margin: 1rem 0;">
+                        6:30 PM
+                    </p>
+                    <p>Fun, fellowship, and faith-building activities for middle and high school students.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="mt-3">
+            <h2 class="section-title">Find Us</h2>
+            <div class="divider"></div>
+
+            <div class="card" style="padding: 0; overflow: hidden;">
+                <div style="background-color: var(--background-light); padding: 3rem; text-align: center;">
+                    <p style="color: var(--text-light); font-size: 1.1rem;">
+                        📍 Map placeholder - In production, integrate Google Maps or similar mapping service
+                    </p>
+                    <p style="color: var(--text-light); margin-top: 1rem;">
+                        <strong>Address:</strong> 268 Marlin Road, White House, TN 37188
+                    </p>
+                    <p style="color: var(--text-light);">
+                        Plenty of parking available. Handicap accessible entrance on the east side of the building.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-3">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="divider"></div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="card mb-2">
+                    <h3>What should I expect on my first visit?</h3>
+                    <p>You can expect a warm welcome, contemporary worship music, and biblical teaching.
+                    Dress is casual - come as you are! Our services typically last about 90 minutes.</p>
+                </div>
+
+                <div class="card mb-2">
+                    <h3>Is childcare available?</h3>
+                    <p>Yes! We offer nursery care for infants and children's programs for ages 2-12 during all services.
+                    All volunteers are background-checked and trained.</p>
+                </div>
+
+                <div class="card mb-2">
+                    <h3>How can I get involved?</h3>
+                    <p>We have many opportunities to serve! Check out our Events page, attend a newcomer's class,
+                    or contact our office to learn about volunteer opportunities that match your interests and gifts.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Do you offer online services?</h3>
+                    <p>Yes, our Sunday services are livestreamed and archived for later viewing.
+                    Visit our website or contact us for links and details.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Berean Baptist Church of White House</h3>
+                <p>A Bible-believing, King James Version church in White House, Tennessee.</p>
+                <p>Join us as we study God's Word and serve our community together.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="calendar.html">Calendar</a>
+                <a href="events.html">Events</a>
+                <a href="donate.html">Give</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Service Times</h3>
+                <p>Sunday School: 9:30 AM</p>
+                <p>Morning Worship: 10:30 AM</p>
+                <p>Evening Service: 5:00 PM</p>
+                <p>Wednesday Prayer & Bible Study: 7:00 PM</p>
+                <p></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>268 Marlin Road</p>
+                <p>White House, TN 37188</p>
+                <p>Phone: (615) 681-0207</p>
+                <p>Email: info@bbcofwhitehouse.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Berean Baptist Church of White House. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
