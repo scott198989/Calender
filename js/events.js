@@ -21,13 +21,15 @@ function loadEventsData() {
     // Try to load from localStorage first
     const storedEvents = localStorage.getItem('churchEvents');
 
+    // Note: If no events in localStorage, user should visit calendar page first
+    // to generate the full recurring event schedule
     if (storedEvents) {
         allEvents = JSON.parse(storedEvents).map(event => ({
             ...event,
             date: new Date(event.date)
         }));
     } else {
-        // Use sample events if none in localStorage
+        // Fallback to sample events (but calendar.js generates the full schedule)
         allEvents = getSampleEvents();
         localStorage.setItem('churchEvents', JSON.stringify(allEvents));
     }

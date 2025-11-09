@@ -20,16 +20,16 @@ const CONFIG = {
     // Calendar Settings
     CALENDAR_VIEW: 'month', // 'month' or 'week'
     EVENT_COLORS: {
-        'worship': '#3d5a3c',      // Deep forest green
-        'bible-study': '#6b7f4c',  // Olive green
-        'prayer': '#a67c52',       // Warm bronze
-        'youth': '#7a9b76',        // Muted sage
+        'worship': '#2d4a2b',      // Rich forest green
+        'bible-study': '#5d7a52',  // Deep olive
+        'prayer': '#b8925a',       // Refined gold
+        'youth': '#6b8a67',        // Deep sage
         'missions': '#8b7355',     // Warm brown
-        'special': '#a0402a',      // Terracotta
-        'seniors': '#9b8b7e',      // Taupe
-        'mens': '#5a7356',         // Sage green
-        'kids': '#8faa89',         // Soft green
-        'potluck': '#c19a6b'       // Caramel
+        'special': '#8b3a2e',      // Deep terracotta
+        'seniors': '#9b8b7e',      // Warm taupe
+        'mens': '#4a6b47',         // Deep sage green
+        'kids': '#7f9b7c',         // Soft forest green
+        'potluck': '#c4a375'       // Warm gold
     }
 };
 

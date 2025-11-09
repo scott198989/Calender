@@ -1,3 +1,4 @@
+# Berean Baptist Church of White House Website
 
 # Church Calendar - Independent Fundamental Baptist Church
 
@@ -172,10 +173,9 @@ For questions or issues, please contact the church web administrator.
 ---
 
 *"Upon this rock I will build my church" - Matthew 16:18*
-=======
 # Grace Community Church Website
 
-A complete, functional church website featuring an interactive calendar, event management, and a cost-effective donation/tithe system.
+A complete, functional church website featuring an interactive calendar with auto-generated recurring events, comprehensive ministry information, and a cost-effective donation/tithe system.
 
 ## Features
 
@@ -187,12 +187,19 @@ A complete, functional church website featuring an interactive calendar, event m
 - **About Page**: Church history, mission, values, and leadership
 - **Contact Page**: Contact form and church information
 
-### 📅 Interactive Calendar
+### 📅 Interactive Calendar (Auto-Populated!)
+- **Automatically generates all recurring church events** for 6 months
+  - Every Sunday: Sunday School (9:30 AM), Morning Worship (10:30 AM), Evening Service (5:00 PM)
+  - First Sunday: Monthly Potluck (12:00 PM) with adjusted evening service (1:00 PM)
+  - Every Wednesday: 55 and Alive Seniors Club (5:00 PM), Prayer & Bible Study (7:00 PM)
+  - First Saturday: Men's Prayer Breakfast (7:00 AM)
+  - Second Sunday: Bible Quizzing (4:30 PM)
 - Monthly calendar view with navigation
-- Color-coded events by category
-- Click on any date to view event details
+- Color-coded events by category (10 different event types)
+- Click on any date to view full event details
 - Responsive design for mobile devices
-- Events stored in localStorage for persistence
+- Events stored in localStorage for performance
+- **Important**: Visit the calendar page first to generate events!
 
 ### 💝 Tithe & Donation System
 - **Cost-Effective Payment Processing**: Uses Stripe (2.9% + $0.30 per transaction)
@@ -203,12 +210,18 @@ A complete, functional church website featuring an interactive calendar, event m
 - **Secure Payment**: PCI-compliant, SSL encrypted transactions
 - **Mobile Optimized**: Works seamlessly on all devices
 
-### 🎨 Modern Design
-- Clean, professional appearance
+### 🎨 Premium Natural Design
+- **Refined Color Palette**: Rich forest greens, warm golds, and cream tones
+  - Primary: Deep forest green (#2d4a2b)
+  - Accent: Refined brass/gold (#b8925a)
+  - Backgrounds: Soft warm cream (#f8f6f2)
+- **Elegant Typography**:
+  - Serif fonts (Georgia) for headings - traditional church aesthetic
+  - Modern system fonts for body text - optimal readability
 - Fully responsive (mobile, tablet, desktop)
-- Accessible navigation
-- Smooth animations and transitions
-- Consistent branding throughout
+- Accessible navigation with ARIA labels
+- Subtle shadows and smooth animations
+- Professional, sophisticated appearance befitting a Bible-believing church
 
 ## Technology Stack
 
@@ -218,11 +231,29 @@ A complete, functional church website featuring an interactive calendar, event m
 - **Stripe.js**: Payment processing
 - **LocalStorage**: Client-side data persistence
 
+## Quick Start
+
+**To view the website with a fully populated calendar:**
+
+1. Clone or download this repository
+2. Open `calendar.html` in your web browser **first** (this generates all recurring events)
+3. Navigate through the site - all pages will now show the events
+4. To reset/regenerate events, clear your browser's localStorage or the version will auto-update
+
+**The calendar automatically populates with all your church's recurring events for 6 months!**
+
 ## Setup Instructions
 
 ### 1. Basic Setup
 
 Simply open `index.html` in a web browser to view the website locally.
+
+**Important for Calendar**: Visit `calendar.html` first to auto-generate all recurring church events. The calendar will automatically create:
+- All Sunday services (Sunday School, Morning Worship, Evening Service)
+- First Sunday potlucks with adjusted service times
+- Wednesday services (Seniors Club, Prayer Meeting & Bible Study)
+- Monthly Men's Prayer Breakfast and Bible Quizzing
+- All events for the next 6 months!
 
 ### 2. Stripe Configuration
 
