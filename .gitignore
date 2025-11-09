@@ -34,9 +34,23 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+
+# Environment variables
+.env
+.env.local
+
+
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+

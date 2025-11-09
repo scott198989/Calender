@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support Berean Baptist Church of White House through your generous giving">
+    <title>Give - Berean Baptist Church of White House</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/donate.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Berean Baptist Church</div>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="donate.html" class="active">Give</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="donation-container">
+            <div class="donation-intro">
+                <h1 class="section-title">Give to Berean Baptist Church of White House</h1>
+                <div class="divider"></div>
+                <p>Your generosity helps us fulfill our mission to spread the Gospel, serve our community, and support missionaries around the world. Every gift makes a difference.</p>
+                <p><em>"Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver." - 2 Corinthians 9:7</em></p>
+            </div>
+
+            <div class="donation-form-card">
+                <div class="alert alert-success" id="successAlert">
+                    <strong>Thank you!</strong> Your donation has been processed successfully.
+                </div>
+
+                <div class="alert alert-error" id="errorAlert">
+                    <strong>Error:</strong> <span id="errorMessage"></span>
+                </div>
+
+                <form id="donationForm">
+                    <!-- Amount Selection -->
+                    <div class="amount-selection">
+                        <h3>Select Amount</h3>
+                        <div class="amount-options">
+                            <div class="amount-option" data-amount="25">$25</div>
+                            <div class="amount-option" data-amount="50">$50</div>
+                            <div class="amount-option" data-amount="100">$100</div>
+                            <div class="amount-option" data-amount="250">$250</div>
+                            <div class="amount-option" data-amount="500">$500</div>
+                        </div>
+                        <div class="custom-amount">
+                            <label for="customAmount">Or enter custom amount:</label>
+                            <div class="amount-input-wrapper">
+                                <input
+                                    type="number"
+                                    id="customAmount"
+                                    name="customAmount"
+                                    min="1"
+                                    step="1"
+                                    placeholder="Enter amount"
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Donation Type -->
+                    <div class="donation-type">
+                        <h3>Giving Preference</h3>
+                        <div class="type-options">
+                            <div class="type-option selected" data-type="tithe">
+                                <h4>Tithe</h4>
+                                <p>General church operations</p>
+                            </div>
+                            <div class="type-option" data-type="missions">
+                                <h4>Missions</h4>
+                                <p>Support missionaries worldwide</p>
+                            </div>
+                            <div class="type-option" data-type="building">
+                                <h4>Building Fund</h4>
+                                <p>Church facilities and maintenance</p>
+                            </div>
+                            <div class="type-option" data-type="benevolence">
+                                <h4>Benevolence</h4>
+                                <p>Help those in need</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Frequency -->
+                    <div class="frequency-selection">
+                        <h3>Frequency</h3>
+                        <div class="frequency-options">
+                            <div class="frequency-option selected" data-frequency="one-time">
+                                <h4>One-Time</h4>
+                            </div>
+                            <div class="frequency-option" data-frequency="monthly">
+                                <h4>Monthly</h4>
+                            </div>
+                            <div class="frequency-option" data-frequency="weekly">
+                                <h4>Weekly</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="form-group">
+                        <label for="donorName">Full Name *</label>
+                        <input type="text" id="donorName" name="donorName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="donorEmail">Email Address *</label>
+                        <input type="email" id="donorEmail" name="donorEmail" required>
+                    </div>
+
+                    <!-- Fee Coverage Notice -->
+                    <div class="fee-notice">
+                        <strong>Processing Fees</strong>
+                        <p>To minimize costs, we use Stripe with rates of 2.9% + $0.30 per transaction. You can choose to cover these fees so 100% of your donation goes to the church.</p>
+                    </div>
+
+                    <div class="cover-fees-option">
+                        <input type="checkbox" id="coverFees" name="coverFees">
+                        <label for="coverFees">
+                            <strong>I'll cover the processing fees</strong> so my full donation goes to the church
+                        </label>
+                    </div>
+
+                    <!-- Donation Summary -->
+                    <div class="donation-summary">
+                        <h3>Donation Summary</h3>
+                        <div class="summary-row">
+                            <span>Donation Amount:</span>
+                            <span id="summaryAmount">$0.00</span>
+                        </div>
+                        <div class="summary-row" id="feesRow" style="display: none;">
+                            <span>Processing Fee:</span>
+                            <span id="summaryFees">$0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total Charge:</span>
+                            <span id="summaryTotal">$0.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Payment Information -->
+                    <div class="payment-section">
+                        <h3>Payment Information</h3>
+                        <div id="card-element">
+                            <!-- Stripe card element will be inserted here -->
+                        </div>
+                        <div id="card-errors" role="alert"></div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-donation" id="submitBtn">
+                        Complete Donation
+                    </button>
+
+                    <!-- Security Badge -->
+                    <div class="security-badge">
+                        <p>🔒 Your payment information is secure and encrypted</p>
+                        <div class="security-icons">
+                            <span class="security-icon">SSL Encrypted</span>
+                            <span class="security-icon">Stripe Verified</span>
+                            <span class="security-icon">PCI Compliant</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Impact Section -->
+            <div class="impact-section">
+                <h3>Your Impact</h3>
+                <div class="impact-stats">
+                    <div class="impact-stat">
+                        <div class="impact-stat-number">250+</div>
+                        <div class="impact-stat-label">Families Served</div>
+                    </div>
+                    <div class="impact-stat">
+                        <div class="impact-stat-number">15</div>
+                        <div class="impact-stat-label">Missionaries Supported</div>
+                    </div>
+                    <div class="impact-stat">
+                        <div class="impact-stat-number">$125K</div>
+                        <div class="impact-stat-label">Given to Missions</div>
+                    </div>
+                    <div class="impact-stat">
+                        <div class="impact-stat-number">50+</div>
+                        <div class="impact-stat-label">Community Programs</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alternative Giving Methods -->
+            <div class="mt-3">
+                <h2 class="section-title">Other Ways to Give</h2>
+                <div class="divider"></div>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Mail a Check</h3>
+                        <p>Make checks payable to "Berean Baptist Church of White House" and mail to:</p>
+                        <p><strong>268 Marlin Road<br>White House, TN 37188</strong></p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Give In Person</h3>
+                        <p>Offering boxes are available during all services, or visit our church office Monday-Friday, 9 AM - 5 PM.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Bank Transfer</h3>
+                        <p>Set up automatic giving through your bank's bill pay service. Contact our office for details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Berean Baptist Church of White House</h3>
+                <p>A Bible-believing, King James Version church in White House, Tennessee.</p>
+                <p>Join us as we study God's Word and serve our community together.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="calendar.html">Calendar</a>
+                <a href="events.html">Events</a>
+                <a href="donate.html">Give</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Service Times</h3>
+                <p>Sunday School: 9:30 AM</p>
+                <p>Morning Worship: 10:30 AM</p>
+                <p>Evening Service: 5:00 PM</p>
+                <p>Wednesday Prayer & Bible Study: 7:00 PM</p>
+                <p></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>268 Marlin Road</p>
+                <p>White House, TN 37188</p>
+                <p>Phone: (615) 681-0207</p>
+                <p>Email: info@bbcofwhitehouse.com</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Berean Baptist Church of White House. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/donate.js"></script>
+</body>
+</html>
