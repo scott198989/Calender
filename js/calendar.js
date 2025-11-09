@@ -1,5 +1,5 @@
 /**
- * Calendar JavaScript
+ * Calendar JavaScript for Berean Baptist Church
  * Handles interactive calendar functionality
  */
 
@@ -8,129 +8,155 @@ let currentDate = new Date();
 let selectedDate = null;
 let events = [];
 
-// Sample events data (in production, this would come from a database/API)
-const sampleEvents = [
-    {
-        id: 1,
-        title: 'Sunday Worship Service',
-        date: new Date(2024, 10, 10), // November 10, 2024
-        time: '9:00 AM',
-        endTime: '10:30 AM',
-        type: 'worship',
-        description: 'Join us for inspiring worship, biblical teaching, and fellowship.',
-        location: 'Main Sanctuary'
-    },
-    {
-        id: 2,
-        title: 'Sunday Worship Service',
-        date: new Date(2024, 10, 10),
-        time: '11:00 AM',
-        endTime: '12:30 PM',
-        type: 'worship',
-        description: 'Second service with the same message for those who prefer a later time.',
-        location: 'Main Sanctuary'
-    },
-    {
-        id: 3,
-        title: 'Wednesday Bible Study',
-        date: new Date(2024, 10, 13),
-        time: '7:00 PM',
-        endTime: '8:30 PM',
-        type: 'bible-study',
-        description: 'Deep dive into Scripture with interactive discussion.',
-        location: 'Fellowship Hall'
-    },
-    {
-        id: 4,
-        title: 'Youth Group',
-        date: new Date(2024, 10, 15),
-        time: '6:30 PM',
-        endTime: '8:30 PM',
-        type: 'youth',
-        description: 'Fun activities, games, and biblical teaching for middle and high school students.',
-        location: 'Youth Center'
-    },
-    {
-        id: 5,
-        title: 'Sunday Worship Service',
-        date: new Date(2024, 10, 17),
-        time: '9:00 AM',
-        endTime: '10:30 AM',
-        type: 'worship',
-        description: 'Join us for inspiring worship, biblical teaching, and fellowship.',
-        location: 'Main Sanctuary'
-    },
-    {
-        id: 6,
-        title: 'Sunday Worship Service',
-        date: new Date(2024, 10, 17),
-        time: '11:00 AM',
-        endTime: '12:30 PM',
-        type: 'worship',
-        description: 'Second service with the same message.',
-        location: 'Main Sanctuary'
-    },
-    {
-        id: 7,
-        title: 'Prayer Meeting',
-        date: new Date(2024, 10, 19),
-        time: '6:00 PM',
-        endTime: '7:00 PM',
-        type: 'prayer',
-        description: 'Corporate prayer for our church, community, and world.',
-        location: 'Prayer Room'
-    },
-    {
-        id: 8,
-        title: 'Wednesday Bible Study',
-        date: new Date(2024, 10, 20),
-        time: '7:00 PM',
-        endTime: '8:30 PM',
-        type: 'bible-study',
-        description: 'Deep dive into Scripture with interactive discussion.',
-        location: 'Fellowship Hall'
-    },
-    {
-        id: 9,
-        title: 'Youth Group',
-        date: new Date(2024, 10, 22),
-        time: '6:30 PM',
-        endTime: '8:30 PM',
-        type: 'youth',
-        description: 'Fun activities, games, and biblical teaching.',
-        location: 'Youth Center'
-    },
-    {
-        id: 10,
-        title: 'Sunday Worship Service',
-        date: new Date(2024, 10, 24),
-        time: '9:00 AM',
-        endTime: '10:30 AM',
-        type: 'worship',
-        description: 'Join us for inspiring worship, biblical teaching, and fellowship.',
-        location: 'Main Sanctuary'
-    },
-    {
-        id: 11,
-        title: 'Thanksgiving Service',
-        date: new Date(2024, 10, 28),
-        time: '10:00 AM',
-        endTime: '11:30 AM',
-        type: 'special',
-        description: 'Special Thanksgiving service to give thanks for God\'s blessings.',
-        location: 'Main Sanctuary'
-    },
-    {
-        id: 12,
-        title: 'Community Outreach',
-        date: new Date(2024, 10, 30),
-        time: '9:00 AM',
-        endTime: '2:00 PM',
-        type: 'missions',
-        description: 'Serve our community through food distribution and practical help.',
-        location: 'Community Center'
+/**
+ * Generate recurring church events
+ */
+function generateChurchEvents() {
+    const events = [];
+    let eventId = 1;
+    const today = new Date();
+    const startDate = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+    const endDate = new Date(today.getFullYear(), today.getMonth() + 4, 0);
+
+    // Helper function to get first day of week in month
+    function getFirstDayOfWeek(year, month, dayOfWeek) {
+        const date = new Date(year, month, 1);
+        while (date.getDay() !== dayOfWeek) {
+            date.setDate(date.getDate() + 1);
+        }
+        return date.getDate();
     }
-];
+
+    // Loop through each month
+    for (let date = new Date(startDate); date <= endDate; date.setDate(date.getDate() + 1)) {
+        const day = date.getDay();
+        const dayOfMonth = date.getDate();
+
+        // Sunday Services
+        if (day === 0) {
+            // Sunday School
+            events.push({
+                id: eventId++,
+                title: 'Sunday School',
+                date: new Date(date),
+                time: '9:30 AM',
+                endTime: '10:30 AM',
+                type: 'bible-study',
+                description: 'Sunday School classes for all ages. Adults meet in the main auditorium, and we have classes for children and teens.',
+                location: 'Main Auditorium & Classrooms'
+            });
+
+            // Morning Worship
+            events.push({
+                id: eventId++,
+                title: 'Morning Worship',
+                date: new Date(date),
+                time: '10:30 AM',
+                endTime: '11:45 AM',
+                type: 'worship',
+                description: 'Join us for God-honoring worship, sound biblical teaching, and fellowship. Nursery and Children\'s Church available.',
+                location: 'Main Sanctuary'
+            });
+
+            // First Sunday: Potluck & Special Evening Service
+            if (dayOfMonth <= 7) {
+                events.push({
+                    id: eventId++,
+                    title: 'Church Potluck Supper',
+                    date: new Date(date),
+                    time: '12:00 PM',
+                    endTime: '1:00 PM',
+                    type: 'potluck',
+                    description: 'Monthly church potluck! Bring your favorite dish to share. Fellowship meal after morning worship.',
+                    location: 'Fellowship Hall'
+                });
+
+                events.push({
+                    id: eventId++,
+                    title: 'Evening Service',
+                    date: new Date(date),
+                    time: '1:00 PM',
+                    endTime: '2:00 PM',
+                    type: 'worship',
+                    description: 'Special first Sunday evening service (earlier time due to potluck). King\'s Kids program for children.',
+                    location: 'Main Sanctuary'
+                });
+            } else {
+                // Regular Evening Service
+                events.push({
+                    id: eventId++,
+                    title: 'Evening Service',
+                    date: new Date(date),
+                    time: '5:00 PM',
+                    endTime: '6:00 PM',
+                    type: 'worship',
+                    description: 'Evening worship service. King\'s Kids program for children during service.',
+                    location: 'Main Sanctuary'
+                });
+
+                // Monthly Bible Quizzing (not on first Sunday)
+                if (dayOfMonth > 7 && dayOfMonth <= 14) {
+                    events.push({
+                        id: eventId++,
+                        title: 'Bible Quizzing',
+                        date: new Date(date),
+                        time: '4:30 PM',
+                        endTime: '5:00 PM',
+                        type: 'bible-study',
+                        description: 'Monthly Bible quizzing before evening service. Open to all ages. We memorize and quiz on a passage of Scripture each month.',
+                        location: 'Main Sanctuary'
+                    });
+                }
+            }
+        }
+
+        // Wednesday Services
+        if (day === 3) {
+            // 55 and Alive Seniors Club
+            events.push({
+                id: eventId++,
+                title: '55 and Alive Seniors Club',
+                date: new Date(date),
+                time: '5:00 PM',
+                endTime: '6:30 PM',
+                type: 'seniors',
+                description: 'Fellowship, activities, and encouragement for our seniors. All ages 55+ welcome!',
+                location: 'Fellowship Hall'
+            });
+
+            // Wednesday Prayer Meeting & Bible Study
+            events.push({
+                id: eventId++,
+                title: 'Prayer Meeting & Bible Study',
+                date: new Date(date),
+                time: '7:00 PM',
+                endTime: '8:00 PM',
+                type: 'prayer',
+                description: 'Corporate prayer for our church, community, and world, followed by Bible study.',
+                location: 'Main Sanctuary'
+            });
+        }
+
+        // First Saturday: Men's Prayer Breakfast
+        if (day === 6 && dayOfMonth <= 7) {
+            events.push({
+                id: eventId++,
+                title: 'Men\'s Prayer Breakfast',
+                date: new Date(date),
+                time: '7:00 AM',
+                endTime: '8:30 AM',
+                type: 'mens',
+                description: 'Monthly men\'s prayer breakfast. Fellowship, food, and prayer for men of all ages.',
+                location: 'Fellowship Hall'
+            });
+        }
+    }
+
+    return events;
+}
+
+// Sample events data
+const sampleEvents = generateChurchEvents();
 
 // Initialize calendar
 document.addEventListener('DOMContentLoaded', function() {
@@ -347,6 +373,23 @@ function showEventDetails(dayEvents, date) {
 
     eventDetails.innerHTML = html;
     modal.classList.add('active');
+}
+
+/**
+ * Format date
+ */
+function formatDate(date, includeYear = true) {
+    const options = {
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric'
+    };
+
+    if (includeYear) {
+        options.year = 'numeric';
+    }
+
+    return date.toLocaleDateString('en-US', options);
 }
 
 /**

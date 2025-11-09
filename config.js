@@ -8,10 +8,10 @@ const CONFIG = {
     STRIPE_PUBLISHABLE_KEY: 'pk_test_YOUR_KEY_HERE',
 
     // Church Information
-    CHURCH_NAME: 'Grace Community Church',
-    CHURCH_EMAIL: 'info@gracecommunity.org',
-    CHURCH_PHONE: '(555) 123-4567',
-    CHURCH_ADDRESS: '123 Faith Street, City, ST 12345',
+    CHURCH_NAME: 'Berean Baptist Church of White House',
+    CHURCH_EMAIL: 'info@bbcofwhitehouse.com',
+    CHURCH_PHONE: '(615) 681-0207',
+    CHURCH_ADDRESS: '268 Marlin Road, White House, TN 37188',
 
     // Donation Settings
     CURRENCY: 'usd',
@@ -20,12 +20,16 @@ const CONFIG = {
     // Calendar Settings
     CALENDAR_VIEW: 'month', // 'month' or 'week'
     EVENT_COLORS: {
-        'worship': '#4A90E2',
-        'bible-study': '#7ED321',
-        'prayer': '#F5A623',
-        'youth': '#BD10E0',
-        'missions': '#50E3C2',
-        'special': '#D0021B'
+        'worship': '#3d5a3c',      // Deep forest green
+        'bible-study': '#6b7f4c',  // Olive green
+        'prayer': '#a67c52',       // Warm bronze
+        'youth': '#7a9b76',        // Muted sage
+        'missions': '#8b7355',     // Warm brown
+        'special': '#a0402a',      // Terracotta
+        'seniors': '#9b8b7e',      // Taupe
+        'mens': '#5a7356',         // Sage green
+        'kids': '#8faa89',         // Soft green
+        'potluck': '#c19a6b'       // Caramel
     }
 };
 
