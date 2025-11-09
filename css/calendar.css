@@ -131,16 +131,16 @@
     text-overflow: ellipsis;
 }
 
-.event-badge.worship { background-color: #3d5a3c; }
-.event-badge.bible-study { background-color: #6b7f4c; }
-.event-badge.prayer { background-color: #a67c52; }
-.event-badge.youth { background-color: #7a9b76; }
+.event-badge.worship { background-color: #2d4a2b; }
+.event-badge.bible-study { background-color: #5d7a52; }
+.event-badge.prayer { background-color: #b8925a; }
+.event-badge.youth { background-color: #6b8a67; }
 .event-badge.missions { background-color: #8b7355; }
-.event-badge.special { background-color: #a0402a; }
+.event-badge.special { background-color: #8b3a2e; }
 .event-badge.seniors { background-color: #9b8b7e; }
-.event-badge.mens { background-color: #5a7356; }
-.event-badge.kids { background-color: #8faa89; }
-.event-badge.potluck { background-color: #c19a6b; }
+.event-badge.mens { background-color: #4a6b47; }
+.event-badge.kids { background-color: #7f9b7c; }
+.event-badge.potluck { background-color: #c4a375; }
 
 /* Event Modal */
 .modal {
@@ -266,16 +266,16 @@
     transform: translateX(5px);
 }
 
-.event-card.worship { border-left-color: #3d5a3c; }
-.event-card.bible-study { border-left-color: #6b7f4c; }
-.event-card.prayer { border-left-color: #a67c52; }
-.event-card.youth { border-left-color: #7a9b76; }
+.event-card.worship { border-left-color: #2d4a2b; }
+.event-card.bible-study { border-left-color: #5d7a52; }
+.event-card.prayer { border-left-color: #b8925a; }
+.event-card.youth { border-left-color: #6b8a67; }
 .event-card.missions { border-left-color: #8b7355; }
-.event-card.special { border-left-color: #a0402a; }
+.event-card.special { border-left-color: #8b3a2e; }
 .event-card.seniors { border-left-color: #9b8b7e; }
-.event-card.mens { border-left-color: #5a7356; }
-.event-card.kids { border-left-color: #8faa89; }
-.event-card.potluck { border-left-color: #c19a6b; }
+.event-card.mens { border-left-color: #4a6b47; }
+.event-card.kids { border-left-color: #7f9b7c; }
+.event-card.potluck { border-left-color: #c4a375; }
 
 .event-card-header {
     display: flex;

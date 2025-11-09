@@ -171,17 +171,21 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 function loadEvents() {
     const storedEvents = localStorage.getItem('churchEvents');
+    const eventsVersion = localStorage.getItem('churchEventsVersion');
+    const currentVersion = '2.0'; // Increment to force regeneration
 
-    if (storedEvents) {
-        return JSON.parse(storedEvents).map(event => ({
-            ...event,
-            date: new Date(event.date)
-        }));
+    // Force regeneration if version changed or no events
+    if (!storedEvents || eventsVersion !== currentVersion) {
+        console.log('Generating new church events...');
+        localStorage.setItem('churchEventsVersion', currentVersion);
+        saveEvents(sampleEvents);
+        return sampleEvents;
     }
 
-    // Save sample events to localStorage
-    saveEvents(sampleEvents);
-    return sampleEvents;
+    return JSON.parse(storedEvents).map(event => ({
+        ...event,
+        date: new Date(event.date)
+    }));
 }
 
 /**
